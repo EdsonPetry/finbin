@@ -7,17 +7,18 @@ const App = () => {
 
   useEffect(() => {
     axios
-     .get("http://127.0.0.1:5000/api/data")
-     .then(res => {
-      setData(res)
-      console.log(JSON.stringify(data))
-     })
+      .get("http://127.0.0.1:5000/api/data")
+      .then(res => {
+        console.log(res.data)
+        setData(res.data)
+      })
   }, [])
+
 
   return (
 
     <div>
-
+      <h1>{data.message}</h1>
     </div>
   )
 }
